@@ -1,0 +1,5 @@
+.idea
+*.cert
+*.key
+*.xml
+.DS_Store
