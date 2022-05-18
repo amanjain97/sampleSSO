@@ -156,7 +156,7 @@ func SsoEnabledNew(r *gin.Engine, samlSP *samlsp.Middleware) gin.HandlerFunc {
 			}
 			if err == samlsp.ErrNoSession {
 				samlSP.HandleStartAuthFlow(c.Writer, c.Request)
-				c.Next()
+				c.Abort()
 				return
 			}
 			samlSP.OnError(c.Writer, c.Request, err)
